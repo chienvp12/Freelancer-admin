@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.ant-spin-container{
+  padding: 5px;
+  background: white;
+}
+.ant-layout-content{
+  min-height: 87vh !important;
+  margin-top: 64px;
+}
+.ant-table{
+  padding: 10px !important;
+}

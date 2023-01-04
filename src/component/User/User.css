@@ -1,0 +1,14 @@
+.title-user{
+    font-weight: 700;
+}
+.role-user{
+    color: #2f54eb;
+    background: #f0f5ff;
+    border-color: #adc6ff;
+}
+.header-tag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}

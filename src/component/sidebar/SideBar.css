@@ -1,0 +1,27 @@
+
+.ant-menu-item-group-title{
+    font-weight: bold;
+    
+}
+.logo1{
+    height: 64px;
+    /* background-color: rgb(52, 108, 176) !important; */
+}
+.ant-layout-sider-children{
+    position: fixed;
+    width: inherit;
+    height: 100vh;
+    background: #fff;
+    z-index: 2;
+}
+.ant-menu{
+    min-height: calc(100vh - 100px);
+}
+.trigger{
+    width: 100%;
+    background-color: #e6f7ff;
+    height: 100%;
+    font-size: 25px;
+    display: block;
+    padding: 5px;
+}

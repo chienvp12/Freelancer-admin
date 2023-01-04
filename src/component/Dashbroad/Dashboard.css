@@ -1,0 +1,86 @@
+.content-left{
+    width: 60%;
+    height: 100%;
+}
+.dashboard-container{
+    display: flex;
+}
+.financial-chart{
+    background: #fff;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid rgba(34,34,48,.1);
+    margin: 5px;
+}
+h6{
+    font-weight: 500;
+    font-size: 1 rem;
+    
+}
+.chart-header{
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    color: rgba(0, 0, 0, 0.45);
+}
+.user-container{
+    display: flex;
+}
+
+.normal-user{
+    display: flex;
+    justify-content: space-between;
+}
+.createAt{
+    color: #808080;
+
+}
+.username{
+    font-weight: 700;
+    color: #808080;
+
+}
+.list-user{
+    width: 50%;
+}
+.user{
+    width: 50%;
+}
+.user-statistic{
+    display: flex;
+}
+.normal-user{
+    padding: 10px;
+    border-bottom: 1px solid rgba(34,34,48,.2);
+}
+.content-right{
+    background: #fff;
+    height: 100vh;
+    width: 40%;
+}
+.overview{
+    border-bottom: 1px solid rgba(34,34,48,.2);
+
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    text-align: center;
+    
+}
+.col{
+    margin: 10px;
+    font-weight: 700;
+    color: #808080;
+}
+h5{
+    font-size: 1.5rem;
+    color: rgba(0,0,0,.85);
+    line-height: 1.2;
+    padding: 10px;
+}
+.job-overview{
+    padding: 20px;
+}

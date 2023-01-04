@@ -1,0 +1,19 @@
+.thumbnail-avatar{
+    border-radius: 100%;
+    
+}
+.header-profile{
+    display: flex;
+    align-items: center;
+}
+.profile-img{
+    height: 100px;
+    border-radius: 100%;
+}
+.content-profile{
+    display: flex;
+    justify-content: space-between;
+}
+.label-content{
+    font-weight: 700;
+}
