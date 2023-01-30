@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import { Progress } from 'antd';
 import { ArrowRightOutlined, BorderOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
 // Get date now - 30 ngay 
 const startDate = new Date(new Date().getTime() - ((24 * 60 * 60 * 1000) * 29)).toLocaleDateString().split('/').reverse().join('-');
@@ -17,27 +18,30 @@ function Dashbroad() {
   const [account, setAccount] = useState([]);
   const [job, setJob] = useState([]);
   const [sactitiscal, setSactitiscal] = useState([]);
-  const [testAPI, setTestAPI] = useState([]);
   const fetchApi = async () => {
-    const resAccountStatus = await API.requestGetAPI('statistic/account');
-    const resJobStatus = await API.requestGetAPI('statistic/job');
-    const resFeelancer = await API.requestGetAPI('freelancer?currentPage=1&pageSize=999999');
-    const resJob = await API.requestGetAPI('job?currentPage=1&pageSize=5');
-    const resAccount = await API.requestGetAPI('account?currentPage=1&pageSize=5&typeUser=1');
-    const resSactitiscal = await API.requestGetAPI(`statistic/financial?startDate=${startDate}&endDate=${endDate}`);
-
-      // TODO : promisee ALL
-    setStatusAccount(resAccountStatus.data);
-    setStatusJob(resJobStatus.data);
-    setFreelancer(resFeelancer.data.list);
-    setAccount(resAccount.data.list);
-    setJob(resJob.data.list);
-    setSactitiscal(resSactitiscal.data);
+    const endPoints = [
+      'statistic/account',
+      'statistic/job',
+      'freelancer?currentPage=1&pageSize=999999',
+      'job?currentPage=1&pageSize=5',
+      'account?currentPage=1&pageSize=5&typeUser=1',
+      `statistic/financial?startDate=${startDate}&endDate=${endDate}`
+    ]
+    Promise.all(endPoints.map(endpoint => API.requestGetAPI(endpoint))).then(
+      axios.spread((...allData) =>{
+        setStatusAccount(allData[0].data);
+        setStatusJob(allData[1].data);
+        setFreelancer(allData[2].data.list);
+        setJob(allData[3].data.list);
+        setAccount(allData[4].data.list); 
+        setSactitiscal(allData[5].data);
+      })
+    )
   };
   useEffect(() => {
     fetchApi();
   }, []);
-
+  
   const dataChart = {
     labels: sactitiscal.map((item, index) => {
       const [date, values] = item;
